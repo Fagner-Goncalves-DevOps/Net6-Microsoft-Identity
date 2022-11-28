@@ -25,7 +25,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))); //precisa passar pelo builder
 
 // For Identity
-builder.Services.AddIdentity<ApplicationUser, //IdentityUser, precisa usar mesmo data model, não identityuser original
+builder.Services.AddIdentity<ApplicationUser, //IdentityUser, precisa usar mesmo data model, não identityuser original(DI Native Funcionar)
                              IdentityRole>()
                              .AddEntityFrameworkStores<ApplicationDbContext>()
                              .AddDefaultTokenProviders();
