@@ -10,19 +10,22 @@ namespace NetIdentityModel.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly RoleManager<IdentityRole> _roleManager;  //sem uso no momento
+       // private readonly RoleManager<IdentityRole> _roleManager;  //sem uso no momento
+      //  private readonly IConfiguration _configuration;
         private readonly ILogger<HomeController> _logger;
 
         public AccountController(
                                 ILogger<HomeController> logger,
                                 UserManager<ApplicationUser> userManager,
-                                SignInManager<ApplicationUser> signInManager,
-                                RoleManager<IdentityRole> roleManager //sem uso no momento
+                                SignInManager<ApplicationUser> signInManager//,
+                             //   RoleManager<IdentityRole> roleManager, //sem uso no momento
+                             //  IConfiguration configuration
                                 ) : base()
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _roleManager = roleManager; //sem uso no momento
+          //  _roleManager = roleManager; //sem uso no momento
+          //  _configuration = configuration;
             _logger = logger;
         }
 

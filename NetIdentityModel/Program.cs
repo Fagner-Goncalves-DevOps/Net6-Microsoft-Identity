@@ -6,6 +6,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using NetIdentityModel.Data.DbContext;
 
+//addpor min para testes
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using NetIdentityModel.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -19,7 +25,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))); //precisa passar pelo builder
 
 // For Identity
-builder.Services.AddIdentity<IdentityUser, 
+builder.Services.AddIdentity<ApplicationUser, //IdentityUser, precisa usar mesmo data model, não identityuser original
                              IdentityRole>()
                              .AddEntityFrameworkStores<ApplicationDbContext>()
                              .AddDefaultTokenProviders();
@@ -34,13 +40,13 @@ builder.Services.AddIdentity<IdentityUser,
 // Adding Jwt Bearer
 
 
-// configure DI for application services
+/// configure DI for application services
 //builder.Services.AddScoped<>();
 
 
 //builder.Services.AddRazorPages();
+//builder.Services.AddMvc();
 
-builder.Services.AddMvc();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -57,6 +63,7 @@ app.UseRouting();
 // Authentication & Authorization
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
