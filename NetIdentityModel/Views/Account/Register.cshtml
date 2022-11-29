@@ -3,17 +3,26 @@
     Layout = "_Layout";
 }
 
-
 @{
     ViewBag.Title = "Registro de Usuário";
 }
-
 
 <h3>Registrar Usuário</h3>
 <div class="row">
     <div class="col-md-6">
         <form method="post">
-                @*<div asp-validation-summary="All" class="text-danger"></div>  add alerta de correçao no cabeçalho*@             
+                @*<div asp-validation-summary="All" class="text-danger"></div>  add alerta de correçao no cabeçalho*@    
+                
+             <div class="form-group">
+                <label asp-for="UserExtended"></label>
+                <input asp-for="UserExtended" class="form-control" />
+                <span asp-validation-for="UserExtended" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cpf"></label>
+                <input asp-for="Cpf" class="form-control" />
+                <span asp-validation-for="Cpf" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Email"></label>
                 <input asp-for="Email" class="form-control" />

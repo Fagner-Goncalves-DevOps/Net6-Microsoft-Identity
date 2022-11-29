@@ -5,6 +5,17 @@ namespace NetIdentityModel.Models.AccountDto
     public class RegisterDto
     {
         [Required]
+        [Display(Name = "Nome")]
+        public string? UserExtended { get; set; }
+
+        [Required]
+        [Display(Name = "CPF")]
+        public string? Cpf { get; set; }
+
+
+
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string? Email { get; set; }
@@ -19,5 +30,6 @@ namespace NetIdentityModel.Models.AccountDto
         [Display(Name = "Confirme a Password")]
         [Compare("Password", ErrorMessage = "A senha e a senha de confirmação não correspondem.")]
         public string? ConfirmPassword { get; set; }
+
     }
 }

@@ -4,6 +4,8 @@ namespace NetIdentityModel.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        //especializadas
+        //propriedades especializadas extendidas
+        public string? UserExtended { get; set; }
+        public string? Cpf { get; set; }
     }
 }
