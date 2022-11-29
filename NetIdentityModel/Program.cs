@@ -43,7 +43,6 @@ app.UseRouting();
 // Authentication & Authorization
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

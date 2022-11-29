@@ -17,5 +17,7 @@ namespace NetIdentityModel.Data.DbContext
             // For example, you can rename the ASP.NET Core Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+        //essa classe pode ser extendia para um melhor funcionamento
+        // para uma melhor organização do databae
     }
 }

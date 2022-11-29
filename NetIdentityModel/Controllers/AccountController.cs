@@ -59,9 +59,10 @@ namespace NetIdentityModel.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDto model)
-        {            if (ModelState.IsValid) 
+        {      
+            if (ModelState.IsValid) 
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
+                var user = new ApplicationUser { UserExtended = model.UserExtended, Cpf = model.Cpf, UserName = model.Email, Email = model.Email};
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded) 
