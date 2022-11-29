@@ -5,47 +5,27 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using NetIdentityModel.Data.DbContext;
-
-//addpor min para testes
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using NetIdentityModel.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
-
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 // For Entity Framework
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))); //precisa passar pelo builder
+        options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))); 
 
 // For Identity
-builder.Services.AddIdentity<ApplicationUser, //IdentityUser, precisa usar mesmo data model, não identityuser original(DI Native Funcionar)
+builder.Services.AddIdentity<ApplicationUser, //IdentityUser, precisa usar mesmo data model(customizada), não identityuser original(DI Native Funcionar)
                              IdentityRole>()
                              .AddEntityFrameworkStores<ApplicationDbContext>()
                              .AddDefaultTokenProviders();
 
 // Adding Authentication
-//builder.Services.AddAuthentication(options =>
-//{
-//    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-//    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-//    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-//});
 // Adding Jwt Bearer
-
-
-/// configure DI for application services
-//builder.Services.AddScoped<>();
-
-
-//builder.Services.AddRazorPages();
-//builder.Services.AddMvc();
+// configure DI for application services
 
 var app = builder.Build();
 
