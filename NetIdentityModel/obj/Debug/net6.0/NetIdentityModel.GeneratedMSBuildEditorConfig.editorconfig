@@ -31,8 +31,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFJvbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/EditUsersInRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXJzSW5Sb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/ListRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdFJvbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/ListUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdFVzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/ManageUserRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlVXNlclJvbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Error/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Home/Index.cshtml]

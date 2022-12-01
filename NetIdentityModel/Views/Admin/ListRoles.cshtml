@@ -16,7 +16,7 @@
 
 @if (Model.Any())
 {
-    <a class="btn btn-warning glow font-weight-bolder mb-3" style="width:auto" asp-action="CreateRole" asp-controller="Account">Nova Role</a>
+    <a class="btn btn-warning glow font-weight-bolder mb-3" style="width:auto" asp-action="CreateRole" asp-controller="Admin">Nova Role</a>
     foreach (var role in Model)
     {
         <div class="card mb-3">
@@ -27,9 +27,17 @@
                 <h5 class="card-title">@role.Name</h5>
             </div>
             <div class="card-footer">
-                @*<a href="#" class="btn btn-success">Editar</a>*@
+                @*<a href="#" class="btn btn-success">Editar</a>
                 <a asp-action="EditRole" asp-controler="Admin" asp-route-id="@role.Id" class="btn btn-success">Editar</a>
-                <a href="#" class="btn btn-danger">Deletar</a>
+                <a href="#" class="btn btn-danger">Deletar</a>*@
+                <form asp-action="DeleteRole" asp-route-id="@role.Id" method="post">
+                    <a asp-action="EditRole" asp-controler="Admin" asp-route-id="@role.Id" class="btn btn-primary">Editar</a>
+                    <span id="confirmaDeleteSpan_@role.Id" style="display:none"><span>Deseja deletar esta role ?</span>
+                        <button type="submit" class="btn btn-danger">Sim</button>
+                        <a href="#" class="btn btn-primary" onclick="confirmaDelete('@role.Id', false)">Não</a>
+                    </span>
+                    <span id="deleteSpan_@role.Id"><a href="#" class="btn btn-danger" onclick="confirmaDelete('@role.Id', true)">Deletar</a></span>
+                </form>
             </div>
         </div>
     }
@@ -44,13 +52,13 @@ else
             <h5 class="card-title">
                 Use o botão abaixo para criar uma role
             </h5>
-            <a class="btn btn-success" style="width:auto"asp-controller="administration" asp-action="CreateRole">Criar Role</a>
+            <a class="btn btn-success" style="width:auto" asp-controller="Admin" asp-action="CreateRole">Criar Role</a>
         </div>
     </div>
 }
 
 <hr />
-
+<h5>Lista das Roles</h5>
 <div class="card card-body">
     <div class="table-responsive">
         <table id="table-xs" class="table table-hover">
@@ -67,7 +75,7 @@ else
             @foreach (var item in Model)
             {
                 <tr>
-@*                    <td><a href="@Url.Action("Details","Grupo",new { id=item.Id })">@Html.DisplayFor(modelItem => item.Id)</a></td>
+                    @*<td><a href="@Url.Action("Details","Grupo",new { id=item.Id })">@Html.DisplayFor(modelItem => item.Id)</a></td>
                     <td><a href="@Url.Action("Details","Grupo",new { id=item.Id })">@Html.DisplayFor(modelItem => item.Id)</a></td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.Id)
@@ -81,7 +89,3 @@ else
     </div>
 </div>
 
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
