@@ -5,6 +5,7 @@ using NetIdentityModel.Models;
 using NetIdentityModel.Models.AccountDto;
 using System.Data;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace NetIdentityModel.Controllers
 {
@@ -260,7 +261,7 @@ namespace NetIdentityModel.Controllers
 
             foreach (var role in userRoles)
             {
-                var userRolesViewModel = new UserRolesDto
+                var UserRolesDto = new UserRolesDto
                 {
                     RoleId = role.Id,
                     RoleName = role.Name
@@ -268,20 +269,97 @@ namespace NetIdentityModel.Controllers
 
                 if (await _userManager.IsInRoleAsync(user, role.Name))
                 {
-                    userRolesViewModel.IsSelected = true;
+                    UserRolesDto.IsSelected = true;
                 }
                 else
                 {
-                    userRolesViewModel.IsSelected = false;
+                    UserRolesDto.IsSelected = false;
                 }
-                model.Add(userRolesViewModel);
+                model.Add(UserRolesDto);
             }
             return View(model);
         }
         [HttpPost]
         public async Task<IActionResult> ManageUserRoles(List<UserRolesDto> model, string userId)
         {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = $"Usuário com Id = {userId} não foi encontrado";
+                return View("NotFound");
+            }
+            var roles = await _userManager.GetRolesAsync(user);
+            var result = await _userManager.RemoveFromRolesAsync(user, roles);
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Não foi possível remover a role do usuário");
+                return View(model);
+            }
+            result = await _userManager.AddToRolesAsync(user,model.Where(x => x.IsSelected).Select(y => y.RoleName));
+
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Não foi possível incluir a role ao usuário");
+                return View(model);
+            }
             return View(model);
+        }
+
+        //Admin/Manager Claims
+        [HttpGet]
+        public async Task<IActionResult> ManageUserClaims(string userId) 
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = $"Usuário com  Id = {userId} não foi encontrado";
+                return View("NotFound");
+            }
+            var existingUserClaims = await _userManager.GetClaimsAsync(user);
+            var model = new UserClaimsDto
+            {
+                UserId = userId
+            };
+            foreach (Claim claim in ClaimsStore.AllClaims)
+            {
+                UserClaim userClaim = new UserClaim
+                {
+                    ClaimType = claim.Type
+                };
+                if (existingUserClaims.Any(c => c.Type == claim.Type))
+                {
+                    userClaim.IsSelected = true;
+                }
+                model.Claims.Add(userClaim);
+            }
+            return View(model); 
+        }
+        [HttpPost]
+        public async Task<IActionResult> ManageUserClaims(UserClaimsDto model)
+        {
+            var user = await _userManager.FindByIdAsync(model.UserId);
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = $"Usuário com  Id = {model.UserId} não foi encontrado";
+                return View("NotFound");
+            }
+            var claims = await _userManager.GetClaimsAsync(user);
+            var result = await _userManager.RemoveClaimsAsync(user, claims);
+
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Não foi possível remover as claims do usuário");
+                return View(model);
+            }
+            result = await _userManager.AddClaimsAsync(user,
+                model.Claims.Where(c => c.IsSelected).Select(c => new Claim(c.ClaimType, c.ClaimType)));
+
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Não foi possível adicionar as claims selecionadas");
+                return View(model);
+            }
+            return RedirectToAction("EditUser", new { Id = model.UserId });
         }
 
 
