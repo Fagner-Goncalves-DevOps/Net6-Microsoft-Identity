@@ -63,6 +63,10 @@ namespace NetIdentityModel.Controllers
 
                 if (result.Succeeded) 
                 {
+                    if (_signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        return RedirectToAction("ListUsers", "Admin");
+                    }
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("index", "home");
                 }

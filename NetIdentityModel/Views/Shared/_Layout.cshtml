@@ -1,6 +1,4 @@
-﻿@*@inject Microsoft.AspNetCore.Identity.SignInManager<NetIdentityModel.Models.AccountDto.RegisterDto> _signInManager
-  @inject Microsoft.AspNetCore.Identity.UserManager<NetIdentityModel.Models.AccountDto.RegisterDto> _userManager*@
-
+﻿
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
@@ -35,23 +33,54 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="CreateRole">Create Role</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="ListRoles">List Roles</a>
-                        </li>
-
+                        @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="ListRoles">Gerenciar Roles</a>
+                        </li>*@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-item nav-link" asp-area="" asp-controller="Account" asp-action="Register">Registrar</a>
+                            <a class="nav-item nav-link" asp-area="" asp-controller="Account" asp-action="Register">Registrar |</a>
                         </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="ListUsers">Gerenciar Usuários |</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="ListRoles">Gerenciar Roles |</a>
+                            </li>
+@*                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerenciar</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" asp-controller="Admin" asp-action="ListUsers">Usuários</a>
+                                    <a class="dropdown-item" asp-controller="Admin" asp-action="ListRoles">Roles</a>
+                                </div>
+                            </li>*@
+                        }
+                        @*@if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                            <a class="nav-link" asp-controller="Admin" asp-action="ListRoles">Gerenciar Roles |</a>
+                            </li>
+                        }*@
                     </ul>
                 </div>
                 @*Menu Login Personalizado simples*@            
                 <div class="row" style="text-align:right;">
                         @if (SignInManager.IsSignedIn(User))
                         {
-                        <div>Olá @UserManager.GetUserName(User) | @Html.ActionLink("Logout", "Logout", "Account", new { area = "" } ) </div>
+                        <div>Olá @UserManager.GetUserName(User) | @Html.ActionLink("Sair", "Logout", "Account", new { area = "" } ) </div>
                         }
+@*                      @if(User.IsInRole("Admin"))
+                        {
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="ListRoles">
+                                    Gerenciar Roles
+                                </a>
+                            </li>
+                        </ul>
+                        }*@
                         else
                         {
                             <a class="nav-item nav-link" asp-area="" asp-controller="Account" asp-action="login">Login</a>
@@ -74,6 +103,9 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

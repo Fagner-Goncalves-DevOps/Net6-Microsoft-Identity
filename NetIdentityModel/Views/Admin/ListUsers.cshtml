@@ -1,0 +1,64 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@model IEnumerable<ApplicationUser>
+
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Todos os usuários";
+}
+<h2>Usuários</h2>
+@if (Model.Any())
+{
+    <a asp-action="Register" asp-controller="Account"
+   class="btn btn-primary mb-3" style="width:auto">
+        Novo Usuário
+    </a>
+    foreach (var user in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                ID : @user.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@user.UserName</h5>
+            </div>
+            <div class="card-footer">
+
+                <div class="card-footer">
+                    <form method="post" asp-action="DeleteUser" asp-route-id="@user.Id">
+                        <a asp-controller="Admin" asp-action="Edituser"asp-route-id="@user.Id" class="btn btn-primary">Editar</a>
+
+                        <span id="confirmaDeleteSpan_@user.Id" style="display:none">
+                        <span>Deseja realmente deletar este usuário ?</span>
+                            <button type="submit" class="btn btn-danger">Sim</button>
+                            <a href="#" class="btn btn-primary" onclick="confirmaDelete('@user.Id', false)">Não</a>
+                        </span>
+                        <span id="deleteSpan_@user.Id"><a href="#" class="btn btn-danger" onclick="confirmaDelete('@user.Id', true)">Delete</a>
+                        </span>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            Sem usuários registrados
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Use o botão abaixo para criar um usuário
+            </h5>
+            <a class="btn btn-primary" style="width:auto"
+           asp-controller="Account" asp-action="Register">
+                Criar um novo usuário
+            </a>
+        </div>
+    </div>
+}
+
