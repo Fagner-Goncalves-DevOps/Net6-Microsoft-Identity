@@ -18,11 +18,11 @@ namespace NetIdentityModel.Models.AccountDto
         [EmailAddress(ErrorMessage = "Email inválido")]
         public string? Email { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "Nome")]
         public string? UserExtended { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "CPF")]
         public string? Cpf { get; set; }
 

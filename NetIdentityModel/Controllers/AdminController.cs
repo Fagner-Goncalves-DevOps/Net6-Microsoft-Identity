@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NetIdentityModel.Models;
 using NetIdentityModel.Models.AccountDto;
 using System.Data;
@@ -123,9 +124,7 @@ namespace NetIdentityModel.Controllers
                 ViewBag.ErrorMessage = $"Usuário com Id = {id} não foi encontrado";
                 return View("NotFound");
             }
-            // GetClaimsAsync retorna a lista de Claims
             var userClaims = await _userManager.GetClaimsAsync(user);
-            // GetRolesAsync retorna a lista de Roles
             var userRoles = await _userManager.GetRolesAsync(user);
             var model = new EditUserDto
             {
@@ -152,8 +151,8 @@ namespace NetIdentityModel.Controllers
             {
                 user.Email = model.Email;
                 user.UserName = model.UserName;
-                user.Cpf = user.Cpf;
-                user.UserExtended = user.UserExtended;
+                user.Cpf = model.Cpf;
+                user.UserExtended = model.UserExtended;
                 var result = await _userManager.UpdateAsync(user);
                 if (result.Succeeded)
                 {
@@ -247,7 +246,6 @@ namespace NetIdentityModel.Controllers
         public async Task<IActionResult> ManageUserRoles(string userId) 
         {
             ViewBag.userId = userId;
-
             var user = await _userManager.FindByIdAsync(userId);
 
             if (user == null)
@@ -258,7 +256,6 @@ namespace NetIdentityModel.Controllers
 
             var model = new List<UserRolesDto>();
             var userRoles = _roleManager.Roles.ToList();
-
             foreach (var role in userRoles)
             {
                 var UserRolesDto = new UserRolesDto
@@ -302,7 +299,7 @@ namespace NetIdentityModel.Controllers
                 ModelState.AddModelError("", "Não foi possível incluir a role ao usuário");
                 return View(model);
             }
-            return View(model);
+            return RedirectToAction("EditUser", new { Id = userId });
         }
 
         //Admin/Manager Claims
@@ -375,16 +372,27 @@ namespace NetIdentityModel.Controllers
             }
             else
             {
-                var result = await _roleManager.DeleteAsync(role);
-                if (result.Succeeded)
+                try
                 {
-                    return RedirectToAction("ListRoles");
+                    var result = await _roleManager.DeleteAsync(role);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("ListRoles");
+                    }
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                    return View("ListRoles");
                 }
-                foreach (var error in result.Errors)
+                // Se a exceção é um DbUpdateException, não podemos deletar 
+                // a role pois ela contém usuários
+                catch (DbUpdateException) 
                 {
-                    ModelState.AddModelError("", error.Description);
+                    ViewBag.ErrorTitle = $"A role {role.Name} esta em uso";
+                    ViewBag.ErrorMessage = $"A role {role.Name} não pode ser deletada pois contém usuários. Delete os usuários antes de deletar a role";
+                    return View("Error");
                 }
-                return View("ListRoles");
             }
         }
 
@@ -393,7 +401,6 @@ namespace NetIdentityModel.Controllers
         public async Task<IActionResult> DeleteUser(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
-
             if (user == null)
             {
                 ViewBag.ErrorMessage = $"Usuário com Id = {id} não foi encontrado";
@@ -407,12 +414,11 @@ namespace NetIdentityModel.Controllers
                 {
                     return RedirectToAction("ListUsers");
                 }
-
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
                 }
-                return View();
+                return View("ListUsers");
             }
         }
     }

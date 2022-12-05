@@ -30,7 +30,7 @@ builder.Services.AddIdentity<ApplicationUser, //IdentityUser, precisa usar mesmo
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment()) //colocar !app. para mostrar erro de producao
 {
     //alterado para mostrar erros em produção
     app.UseDeveloperExceptionPage();
