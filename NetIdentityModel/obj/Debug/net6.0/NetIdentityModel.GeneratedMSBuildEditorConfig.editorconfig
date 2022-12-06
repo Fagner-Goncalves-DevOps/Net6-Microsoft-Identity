@@ -8,77 +8,81 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NetIdentityModel
 build_property.RootNamespace = NetIdentityModel
-build_property.ProjectDir = C:\Users\FagnerGoncalves\Desktop\RepoShared\NetIdentityModel - v2\NetIdentityModel\NetIdentityModel\
+build_property.ProjectDir = C:\Users\FagnerGoncalves\Desktop\RepoShared\NetIdentityModel - v3\NetIdentityModel\NetIdentityModel\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\FagnerGoncalves\Desktop\RepoShared\NetIdentityModel - v2\NetIdentityModel\NetIdentityModel
+build_property.MSBuildProjectDirectory = C:\Users\FagnerGoncalves\Desktop\RepoShared\NetIdentityModel - v3\NetIdentityModel\NetIdentityModel
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Account/Login.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Account/Register.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/CreateRole.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Admin/CreateRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/EditRole.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Admin/EditRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFJvbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/EditUser.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Admin/EditUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/EditUsersInRole.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Admin/EditUsersInRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXJzSW5Sb2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/ListRoles.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Admin/ListRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdFJvbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/ListUsers.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Admin/ListUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdFVzZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Admin/ManageUserRoles.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Admin/ManageUserClaims.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlVXNlckNsYWltcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Admin/ManageUserRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlVXNlclJvbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Error/Error.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Error/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Home/Index.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Home/Privacy.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Shared/Error.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/_ViewImports.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/_ViewStart.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v2/NetIdentityModel/NetIdentityModel/Views/Shared/_Layout.cshtml]
+[C:/Users/FagnerGoncalves/Desktop/RepoShared/NetIdentityModel - v3/NetIdentityModel/NetIdentityModel/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6sy0hq5sah

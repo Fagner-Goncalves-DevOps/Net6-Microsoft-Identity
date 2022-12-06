@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wG/13jr7H396yldXcbAdeJrpLShaQoh0jjYCZWBoeC9i3Pnr0iPVf+yRcqAJEabpNPGTKAzKf2Gfn7I6E0sMfg==",
+  "dgSpecHash": "BORz0jbSVtVw7TuoHYTkMDyDlXuRurnuY//rBmyBf7zuepUTE38qNzyO9CLetQufSs/5P2m4LjrUNQ0Ix1waBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v2\\NetIdentityModel\\NetIdentityModel\\NetIdentityModel.csproj",
+  "projectFilePath": "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v3\\NetIdentityModel\\NetIdentityModel\\NetIdentityModel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FagnerGoncalves\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\FagnerGoncalves\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

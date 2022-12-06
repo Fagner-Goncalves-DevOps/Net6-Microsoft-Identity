@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v2\\NetIdentityModel\\NetIdentityModel\\NetIdentityModel.csproj": {}
+    "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v3\\NetIdentityModel\\NetIdentityModel\\NetIdentityModel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v2\\NetIdentityModel\\NetIdentityModel\\NetIdentityModel.csproj": {
+    "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v3\\NetIdentityModel\\NetIdentityModel\\NetIdentityModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v2\\NetIdentityModel\\NetIdentityModel\\NetIdentityModel.csproj",
+        "projectUniqueName": "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v3\\NetIdentityModel\\NetIdentityModel\\NetIdentityModel.csproj",
         "projectName": "NetIdentityModel",
-        "projectPath": "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v2\\NetIdentityModel\\NetIdentityModel\\NetIdentityModel.csproj",
+        "projectPath": "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v3\\NetIdentityModel\\NetIdentityModel\\NetIdentityModel.csproj",
         "packagesPath": "C:\\Users\\FagnerGoncalves\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v2\\NetIdentityModel\\NetIdentityModel\\obj\\",
+        "outputPath": "C:\\Users\\FagnerGoncalves\\Desktop\\RepoShared\\NetIdentityModel - v3\\NetIdentityModel\\NetIdentityModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
