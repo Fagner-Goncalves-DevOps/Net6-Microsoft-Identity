@@ -14,8 +14,7 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddControllersWithViews();
 
 // For Entity Framework
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))); 
+builder.Services.AddDbContext<ApplicationDbContext>( options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))); 
 
 // For Identity
 builder.Services.AddIdentity<ApplicationUser, //IdentityUser, precisa usar mesmo data model(customizada), não identityuser original(DI Native Funcionar)
