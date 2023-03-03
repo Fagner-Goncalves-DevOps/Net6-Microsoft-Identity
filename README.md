@@ -5,9 +5,9 @@ Clonar aplicação, rodar add-migration depois update-database, na sequencia rod
 necessario criar um usuario admin direto no sql server, rodar comando abaixo na sequencia.
 
 
---Rodar 1° para criar a role admin
+*Rodar 1° para criar a role admin
 Rodar quert na pasta Sql dentro do folder
 
---Rodar 2° add usuario criado acima para role admin
+*Rodar 2° add usuario criado acima para role admin
 
 Rodar quert na pasta Sql dentro do folder
