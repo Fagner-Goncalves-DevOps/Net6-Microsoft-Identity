@@ -5,6 +5,6 @@ Clonar aplicação, rodar add-migration depois update-database, na sequencia rod
 
 rodar comando abaixo na sequencia.
 
-## Que já foi implementado :
+## Rodar aplicação para testar e ver funcionamento :
 - *1° Rodar a query query na pasta Sql dentro do folder do projeto para criar a role "Admin"
 - *2° Rodar a query query na pasta Sql dentro do folder do projeto para add role para usuario criado.
